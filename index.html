@@ -101,14 +101,14 @@
 
             
        
-var     //AAIPTot1980 = L.geoJson(data1980, {style:style}).addTo(map); // define a variable to make the geojson layer accessible for the funtion to use   
+    //AAIPTot1980 = L.geoJson(data1980, {style:style}).addTo(map); // define a variable to make the geojson layer accessible for the funtion to use   
             
         function resetHighlight(e) {
                geojson.resetStyle(e.target);
             }
          
-            AAIPTot1980 = L.geoJson(data1980, {
-                style80:style80,
+       var     AAIPTot1980 = L.geoJson(data1980, {
+                style: style80,
                 onEachFeature: onEachFeature
             }).bindTooltip(function (layer){
                 return layer.feature.properties.GISJOIN 
@@ -116,8 +116,8 @@ var     //AAIPTot1980 = L.geoJson(data1980, {style:style}).addTo(map); // define
                   + '<p style="color:red">' + layer.feature.properties.APIPrctStr.toString() + '% of the tracts is AAIP</p>';       
             }).addTo(map);
 
-            AATot2020 = L.geoJson(data2020, {
-                style20:style20,
+     var       AATot2020 = L.geoJson(data2020, {
+                style: style20,
                 onEachFeature: onEachFeature
             }).bindTooltip(function (layer){
                 return layer.feature.properties.GISJOIN 
@@ -125,6 +125,15 @@ var     //AAIPTot1980 = L.geoJson(data1980, {style:style}).addTo(map); // define
                   + '<p style="color:brown">' + layer.feature.properties.PrctAA.toString() + '<% of the tract is AA/p>';       
             }).addTo(map);
 
+	var basemaps = {
+                "Light Canvas": canvas,
+                "USGSTopo": USGSTopo
+            };
+
+            var overlaymaps = {
+                "AAIP Total 1980": AAIPTot1980,
+                "AA Total 2020" : AATot2020
+            };
             
         L.control.layers(basemaps, overlaymaps).addTo(map);
 

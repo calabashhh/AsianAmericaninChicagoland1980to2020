@@ -39,6 +39,7 @@
 	        maxZoom: 20,
 	        attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
         });
+		
 
         function getColor80(value) {
                  return value > 1201 ? '#08519c':      //  '#eff3ff':
@@ -78,6 +79,7 @@
                 };
             }
 
+		 var control = L.control.layers(basemaps, overlaymaps).addTo(map);
 
         function highlightFeature(e) {
                 // Get access to the feature that was hovered through e.target
@@ -135,7 +137,7 @@
                 "AA Total 2020" : AATot2020
             };
             
-        L.control.layers(basemaps, overlaymaps).addTo(map);
+       
 
 
             // Removing the legend when the layer is removed

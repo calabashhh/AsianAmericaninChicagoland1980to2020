@@ -75,7 +75,7 @@
 
         function style20(feature){
                 return {
-                    fillColor: getColor20(feature.properties.ATot),   // ATot is the field name for the Asian American Pacific Islander Census Total for tract
+                    fillColor: getColor20(feature.properties.AATot),   // ATot is the field name for the Asian American Pacific Islander Census Total for tract
                     weight: 2,
                     opacity: 1,
                     color: 'gray',
@@ -116,7 +116,7 @@
                 onEachFeature: onEachFeature
             }).bindTooltip(function (layer){
                 return layer.feature.properties.GISJOIN 
-                  + '<p style="color:blue">' + layer.feature.properties.AATot.toString() + ' total number AAIP by tract</p>' 
+                  + '<p style="color:blue">' + layer.feature.properties.ATot.toString() + ' total number AAIP by tract</p>' 
                   + '<p style="color:red">' + layer.feature.properties.APIPrctStr.toString() + '% of the tracts is AAIP</p>';       
             }).addTo(map);
 

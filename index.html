@@ -17,6 +17,10 @@
             #map { min-height: 100%; }
         </style>
 
+	<script type"text/javascript" src="data1980.js"></script>
+
+	<script type"text/javascript" src="data2020.js"></script>
+	    
     </head>
 
     <body>
@@ -78,8 +82,6 @@
                     fillOpacity: 0.5
                 };
             }
-
-		 var control = L.control.layers(basemaps, overlaymaps).addTo(map);
 
         function highlightFeature(e) {
                 // Get access to the feature that was hovered through e.target
@@ -235,6 +237,8 @@
                 "AA Total 2020" : AATot2020
             };
 
+	 	var control = L.control.layers(basemaps, overlaymaps).addTo(map);
+	
         </script>
    </body>
 </html>

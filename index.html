@@ -25,7 +25,7 @@
         <script type="text/javascript">
 
           var map = L.map('map', {
-              center: [51.48,-0.07],
+              center: [41.87,87.62],
               zoom: 10
           });
 
@@ -143,28 +143,28 @@
             // Removing the legend when the layer is removed
             map.on('overlayremove', function(eventLayer){
             if (eventLayer.name == 'AAIP Total 1980'){ // We use the key/display name to refer to the layer
-                map.removeControl(legend); // legend is the variable name of the layer legend
+                map.removeControl(legend80); // legend is the variable name of the layer legend
             }
             });
 
             // Adding the legend when the layer is added
             map.on('overlayadd', function(eventLayer){
             if (eventLayer.name == 'AAIP Total 1980'){
-                legend.addTo(map);
+                legend80.addTo(map);
             }
             });
 
             // Removing the legend when the layer is removed
             map.on('overlayremove', function(eventLayer){
             if (eventLayer.name == 'AA Total 2020'){ // We use the key/display name to refer to the layer
-                map.removeControl(legend); // legend is the variable name of the layer legend
+                map.removeControl(legend20); // legend is the variable name of the layer legend
             }
             });
 
             // Adding the legend when the layer is added
             map.on('overlayadd', function(eventLayer){
             if (eventLayer.name == 'AA Total 2020'){
-                legend.addTo(map);
+                legend20.addTo(map);
             }
             });
 
